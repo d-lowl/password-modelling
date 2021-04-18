@@ -1,8 +1,8 @@
-from clearml import Task, Dataset, TaskTypes
+from clearml import Task, Dataset
 import os
 from src.prepare_dataset import prepare_dataset
 
-task = Task.init(project_name = "password-model", task_name = "prepare_password_dataset", task_type = TaskTypes.data_processing)
+task = Task.init(project_name = "password-model", task_name = "prepare_password_dataset", task_type = Task.TaskTypes.data_processing)
 
 task.execute_remotely()
 
