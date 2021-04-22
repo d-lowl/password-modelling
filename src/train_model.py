@@ -6,7 +6,7 @@ def train_model(dataset):
 
     def tokenize_function(examples):
         return tokenizer(examples["password"])
-    tokenized_datasets = dataset.map(tokenize_function, batched=True, num_proc=7, remove_columns=["password"])
+    tokenized_datasets = dataset.map(tokenize_function, batched=True, num_proc=2, remove_columns=["password"])
 
     block_size = 128
 
@@ -29,7 +29,7 @@ def train_model(dataset):
         group_texts,
         batched=True,
         batch_size=1000,
-        num_proc=7,
+        num_proc=2,
     )
 
     model = AutoModelForCausalLM.from_pretrained(model_checkpoint)
