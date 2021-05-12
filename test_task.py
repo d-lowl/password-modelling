@@ -7,5 +7,5 @@ task = Task.init(project_name="password-model", task_name="Test task")
 
 task.execute_remotely()
 
-print("Doing something")
+print("Doing something else")
 print("Done")
